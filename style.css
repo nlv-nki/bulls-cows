@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+body {
+  background: url('assets/hip-square.png');
+}
+
+header {
+  background: #f2ebe4;
+  width: 100%;
+  border-bottom: 1px solid #ffb9df;
+  box-shadow: 0 0 2px 2px #ffd8d8;
+}
+
+.heading {
+  font-family: 'Courgette', cursive;
+  color: #333;
+  padding: 10px 15px;
+}
+
+.heading-amp {
+  color: #e05e9a;
+  transform: translate(-0px );
+}
+
+.container {
+  position: relative;
+  height: calc(100vh - 155px);
+  max-width: 680px;
+  margin: 30px auto;
+  background: url('assets/grass.png') repeat-x center bottom;
+  background-size: contain;
+}
+
+.container::before,
+.container::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 200px;
+}
+
+.container::before {
+  left: 0;
+  transform: translateX(-55%);
+  background: url('assets/cow.png') no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+
+.container::after {
+  right: 0;
+  transform: translateX(55%);
+  background: url('assets/bull.png') no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
