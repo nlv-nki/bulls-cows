@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background: url('assets/hip-square.png');
 }
@@ -14,19 +19,22 @@ header {
 .heading {
   font-family: 'Courgette', cursive;
   color: #333;
-  padding: 10px 15px;
+  padding: 0 15px;
+  word-spacing: -15px;
 }
 
 .heading-amp {
   color: #e05e9a;
-  transform: translate(-0px );
+  display: inline-block;
+  transform: rotate(-5deg);
+  font-size: 55px;
 }
 
 .container {
   position: relative;
-  height: calc(100vh - 155px);
-  max-width: 680px;
-  margin: 30px auto;
+  height: calc(100% - 95px);
+  max-width: 860px;
+  margin: 20px auto 0;
   background: url('assets/grass.png') repeat-x center bottom;
   background-size: contain;
 }
@@ -35,8 +43,9 @@ header {
 .container::after {
   content: '';
   position: absolute;
-  height: 100%;
-  width: 200px;
+  bottom: 0;
+  height: 200px;
+  width: 150px;
 }
 
 .container::before {
@@ -53,4 +62,23 @@ header {
   background: url('assets/bull.png') no-repeat;
   background-position: bottom;
   background-size: contain;
+}
+
+.rules {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.assumptions-list {
+  margin: 10px 0;
+}
+
+.assumptions-list-item {
+  margin-bottom: 2px;
+  padding: 2px 8px;
+  border: 1px solid white;
+  border-radius: 4px;
+  box-shadow: 0 0 0px 2px #fff3cd;
+  background: #f2ebe4;
+  font-size: 14px;
 }

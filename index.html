@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
   <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
 
   <title>Bulls &amp; Cows</title>
 </head>
@@ -18,6 +22,37 @@
   </header>
 
   <main class="container">
+
+    <section class="alert alert-warning alert-dismissible fade show rules" role="alert">
+      <div class="mb-3">
+          Компьютер задумывает четыре различные цифры из 0,1,2,...9.
+          Игрок делает ходы, чтобы узнать эти цифры и их порядок.
+          Каждый ход состоит из четырёх цифр, 0 может стоять на первом месте.
+          В ответ компьютер показывает число отгаданных цифр, стоящих на своих местах (число быков)
+          и число отгаданных цифр, стоящих не на своих местах (число коров).
+      </div>
+      <div>
+        <b>Пример:</b> Компьютер задумал 0834. Игрок сделал ход 8134. Компьютер ответил: 2 быка (цифры 3 и 4) и 1 корова (цифра 8).
+      </div>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </section>
+
+    <setion class="playground">
+      <div class="form-inline">
+        <form action="" onsubmit="event.preventDefault(); getBullsAndCows(secretCode, assumption.value);">
+          <input type="text" class="form-control mr-3" placeholder="Введите цифры" id="assumption">
+          <input type="submit" class="btn btn-info mr-3" onKeyPress="if (event.which == 13) return false;">
+          <button class="btn btn-danger pull-right" onclick="clearAssumptionContainer();">
+            <i class="fas fa-ban"></i>
+          </button>
+        </form>
+      </div>
+    </setion>
+
+    <section class="assumptions-list" id="assumptions-list">
+    </section>
   </main>
 
 </body>
