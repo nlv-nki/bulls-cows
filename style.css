@@ -82,3 +82,15 @@ header {
   background: #f2ebe4;
   font-size: 14px;
 }
+
+.assumptions-list-item-success {
+  height: 150px;
+  line-height: 140px;
+  text-align:  center;
+  background: #e5f2e4;
+  box-shadow: 0 0 0px 2px #009662;
+  font-weight:  600;
+  font-size: 42px;
+  color: #28a745;
+  border-radius: 10px;
+}

@@ -23,7 +23,7 @@
 
   <main class="container">
 
-    <section class="alert alert-warning alert-dismissible fade show rules" role="alert">
+    <section class="alert alert-info alert-dismissible fade show rules" role="alert">
       <div class="mb-3">
           Компьютер задумывает четыре различные цифры из 0,1,2,...9.
           Игрок делает ходы, чтобы узнать эти цифры и их порядок.
@@ -43,8 +43,8 @@
       <div class="form-inline">
         <form action="" onsubmit="event.preventDefault(); getBullsAndCows(secretCode, assumption.value);">
           <input type="text" class="form-control mr-3" placeholder="Введите цифры" id="assumption">
-          <input type="submit" class="btn btn-info mr-3" onKeyPress="if (event.which == 13) return false;">
-          <button class="btn btn-danger pull-right" onclick="clearAssumptionContainer();">
+          <input type="submit" class="btn btn-success mr-3" onKeyPress="if (event.which == 13) return false;">
+          <button class="btn btn-danger pull-right" onclick="event.preventDefault(); clearAssumptionContainer();">
             <i class="fas fa-ban"></i>
           </button>
         </form>
